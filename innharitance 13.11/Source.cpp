@@ -56,7 +56,7 @@ public:
 
 	void Print()
 	{
-		cout << "Name: " << name << "\tColor: " << color << "\tSpeed: " << speed << "\tNumber of places: " << "\tCount of places: " << place  << endl;
+		cout << "Name: " << name << "\tColor: " << color << "\tSpeed: " << speed << "\tCount of places: " << place  << endl;
 	}
 
 };
@@ -79,7 +79,7 @@ public:
 
 	}
 
-	string GetName()
+	/*string GetName()
 	{
 		return name;
 	}
@@ -113,7 +113,7 @@ public:
 	void SetPlace(int p)
 	{
 		place = p;
-	}
+	}*/
 
 	double GetLiftCapacity()
 	{
@@ -162,7 +162,7 @@ public:
 
 	}
 
-	string GetName()
+	/*string GetName()
 	{
 		return name;
 	}
@@ -196,7 +196,7 @@ public:
 	void SetPlace(int p)
 	{
 		place = p;
-	}
+	}*/
 
 	double GetFlyHours()
 	{
@@ -253,41 +253,41 @@ public:
 
 	}
 
-	string GetName()
-	{
-		return name;
-	}
-	void SetName(string n)
-	{
-		name = n;
-	}
+	//string GetName()
+	//{
+	//	return name;
+	//}
+	//void SetName(string n)
+	//{
+	//	name = n;
+	//}
 
-	double GetSpeed()
-	{
-		return speed;
-	}
-	void SetSpeed(double sp)
-	{
-		speed = sp;
-	}
+	//double GetSpeed()
+	//{
+	//	return speed;
+	//}
+	//void SetSpeed(double sp)
+	//{
+	//	speed = sp;
+	//}
 
-	string GetColor()
-	{
-		return color;
-	}
-	void SetColor(string c)
-	{
-		color = c;
-	}
+	//string GetColor()
+	//{
+	//	return color;
+	//}
+	//void SetColor(string c)
+	//{
+	//	color = c;
+	//}
 
-	int GetPlace()
-	{
-		return place;
-	}
-	void SetPlace(int p)
-	{
-		place = p;
-	}
+	//int GetPlace()
+	//{
+	//	return place;
+	//}
+	//void SetPlace(int p)
+	//{
+	//	place = p;
+	//}
 
 	int GetScrews()
 	{
@@ -323,6 +323,174 @@ public:
 
 };
 
+class car : public vehicle {
+protected:
+	string model;
+	int horsepower;
+	double engineSize;
+public:
+	car() { horsepower = 0, engineSize = 0; }
+	car(string n, double sp, string c, int p, string m, int h, double eS)
+	{
+		name = n;
+		speed = sp;
+		color = c;
+		place = p;
+		model = m;
+		horsepower = h;
+		engineSize = eS;
+
+
+
+
+	}
+
+	string GetModel()
+	{
+		return model;
+	}
+	void GetModel(int m)
+	{
+		model = m ;
+	}
+
+	int GetHorsePower()
+	{
+		return horsepower;
+	}
+	void SetHorsePower(int h)
+	{
+		horsepower = h;
+	}
+	double GetEngineSize()
+	{
+		return engineSize;
+	}
+	void SetEngineSize(double eS)
+	{
+		engineSize = eS;
+	}
+
+	void Print()
+	{
+		vehicle::Print();
+		cout << "Model: " << model << "\tHorsepowers: " << horsepower << "\tEngine size: " << engineSize << "\n ----------------------------------------------------------------------------" << endl;
+	}
+
+};
+
+class bicycle : public vehicle {
+protected:
+	string model;
+	double wheelSize;
+	string type;
+public:
+	bicycle() { wheelSize = 0; }
+	bicycle(string n, double sp, string c, int p, string m, double wS, string t)
+	{
+		name = n;
+		speed = sp;
+		color = c;
+		place = p;
+		model = m;
+		wheelSize = wS;
+		type = t;
+
+
+
+
+	}
+
+	string GetModel()
+	{
+		return model;
+	}
+	void GetModel(int m)
+	{
+		model = m;
+	}
+
+	int GetWheelSize()
+	{
+		return wheelSize;
+	}
+	void SetWheelSize(int wS)
+	{
+		wheelSize = wS;
+	}
+	string GetType()
+	{
+		return type;
+	}
+	void SetType(string t)
+	{
+		type = t;
+	}
+
+	void Print()
+	{
+		vehicle::Print();
+		cout << "Model: " << model << "\tWheel Size: " << wheelSize << "\tType: " << type << "\n ----------------------------------------------------------------------------" << endl;
+	}
+
+};
+
+class tank : public vehicle {
+protected:
+	string model;
+	double  calibre;
+	double weight ;
+public:
+	tank() { weight = 0, calibre = 0; }
+	tank(string n, double sp, string c, int p, string m, double w, double cal)
+	{
+		name = n;
+		speed = sp;
+		color = c;
+		place = p;
+		model = m;
+		weight = w;
+		calibre = cal;
+
+
+
+
+	}
+
+	string GetModel()
+	{
+		return model;
+	}
+	void GetModel(int m)
+	{
+		model = m;
+	}
+
+	double GetWeight()
+	{
+		return weight;
+	}
+	void SetWeight(double w)
+	{
+		weight = w;
+	}
+	double GetCalibre()
+	{
+		return calibre;
+	}
+	void SetCalibre(double cal)
+	{
+		calibre = cal;
+	}
+
+	void Print()
+	{
+		vehicle::Print();
+		cout << "Model: " << model << "\tWeight in Ton: " << weight << "\tCalibre: " << calibre << "\n ----------------------------------------------------------------------------" << endl;
+	}
+
+};
+
 int main()
 {
 	vehicle obj1("Car", 120, "Red", 5);
@@ -332,5 +500,19 @@ int main()
 	plane obj3("Plane", 600, "White", 150, 2000, 35, 2);
 	obj3.Print();
 	ship obj4("Ship", 40, "Gray", 300, 4, 20000, "Diesel");
+	obj4.Print();
+	car obj5("Audi", 350, "Grey", 2, "R8", 525, 5.2);
+	obj5.Print();
+	bicycle obj6("Santa Cruz", 25, "Green", 1, "Blur M", 29, "MTB");
+	obj6.Print();
+	tank obj7("Oplot", 70, "Camouflage", 3, "-M", 51, 125);
+	obj7.Print();
+
+	cout << "\n ------------------------------------Get/Set---------------------------------\n";
+	obj1.SetSpeed(130);
+	obj1.GetSpeed();
+	obj1.Print();
+	obj4.SetFuel("Coal");
+	obj4.GetFuel();
 	obj4.Print();
 }
